@@ -1,0 +1,31 @@
+let num1, num2, correct;
+
+// Generate new question
+function newQuestion() {
+  num1 = Math.floor(Math.random() * 10);
+  num2 = Math.floor(Math.random() * 10);
+  correct = num1 + num2;
+
+  document.getElementById("question").innerText =
+    "What is " + num1 + " + " + num2 + " ?";
+    
+  document.getElementById("answer").value = "";
+  document.getElementById("result").innerText = "";
+}
+
+// Check answer
+function checkAnswer() {
+  let user = document.getElementById("answer").value;
+  let result = document.getElementById("result");
+
+  if (user == correct) {
+    result.innerText = "Correct!";
+  } else {
+    result.innerText = "Wrong! Answer is " + correct;
+  }
+
+  setTimeout(newQuestion, 1000); // next question after 1 sec
+}
+
+// Start first question
+newQuestion();

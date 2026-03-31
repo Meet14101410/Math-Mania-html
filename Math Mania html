@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Math Mania</title>
+</head>
+<body>
+
+  <h1>Math Mania</h1>
+  <p id="question"></p>
+  <input type="number" id="answer" placeholder="Your answer">
+  <button onclick="checkAnswer()">Submit</button>
+  <p id="result"></p>
+
+  <script>
+    let num1 = Math.floor(Math.random() * 10);
+    let num2 = Math.floor(Math.random() * 10);
+    let correct = num1 + num2;
+
+    document.getElementById("question").innerText =
+      "What is " + num1 + " + " + num2 + " ?";
+
+    function checkAnswer() {
+      let user = document.getElementById("answer").value;
+      let result = document.getElementById("result");
+
+      if (user == correct) {
+        result.innerText = "Correct!";
+      } else {
+        result.innerText = "Wrong! Answer is " + correct;
+      }
+    }
+  </script>
+
+</body>
+</html>
